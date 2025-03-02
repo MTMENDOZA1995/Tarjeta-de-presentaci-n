@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-         /* Diseño General */
         /* Diseño General */
         body {
             overflow-x: hidden; /* Evita el desplazamiento horizontal */
@@ -22,6 +21,9 @@
             justify-content: center;
             align-items: center;
             min-width: 320px; /* Asegura que la página no se encoja más allá de un tamaño mínimo */
+            height: 100vh; /* Hace que el body ocupe toda la altura de la pantalla */
+            overflow: hidden; /* Evita el desplazamiento de la pantalla */
+            flex-direction: column; /* Cambia la dirección de los elementos */
           
         }
 
@@ -29,12 +31,13 @@
         .profile-container {
             background: rgba(0, 0, 0, 0);
             border-radius: 15px;
-            max-width: 100%;
+            max-width: 600px;
             width: 100%;
-            overflow: auto;
+            overflow: hidden; /* Evita que los elementos sobresalgan */
             margin: 0px;
             padding: 0px; /* Espacio interno para evitar que el contenido quede pegado a los bordes */
             position: relative; /* Permite el posicionamiento absoluto de elementos internos */
+            height: 100%;
             
            
         }
@@ -312,9 +315,7 @@
         .footer h1 {
             font-size: 10px;
         }
-    }
-
-    
+    }  
     </style>
 </head>
 <body>
@@ -351,7 +352,7 @@
                 <iframe src="https://open.spotify.com/embed/track/5Q7zuH8VNu7aLappSusPu6?utm_source=generator" 
                         width="300" 
                         height="80" 
-                        frameborder="0"
+                        frameborder="0" 
                         allowfullscreen="" 
                         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
                 </iframe>
