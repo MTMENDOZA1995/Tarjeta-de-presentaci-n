@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de MAX MENDOZA</title>
+
+    <!-- Fuentes externas -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Diseño General */
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          
+        }
+
+        /* Estilo del contenedor principal */
+        .profile-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 550px;
+            width: 60%;
+            overflow: auto;
+            margin: 20px;
+            padding: 20px; /* Espacio interno para evitar que el contenido quede pegado a los bordes */
+            position: relative; /* Permite el posicionamiento absoluto de elementos internos */
+           
+        }
+
+        /* Imagen de fondo */
+        .cover-image {
+            width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+            height: 250px; /* Define la altura de la imagen de fondo */
+            background-image: url('ruta/a/tu/imagen.jpg'); /* Define la ruta de la imagen */
+            background-position: center; /* Centra la imagen dentro del contenedor */
+            background-size: cover; /* Asegura que la imagen cubra completamente el contenedor */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%); /* Corta la imagen en un ángulo de 30 grados en la parte inferior */
+            object-fit: cover;
+        }
+
+        /* Contenido del perfil */
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            align-items: inherit;
+            padding: 15px;
+            text-align: inherit;
+            position: relative; /* Permite que los elementos con posición absoluta se ubiquen dentro de este contenedor */
+        }
+
+        /* Foto de perfil */
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-top: -70px;
+            border: 3px solid white;
+        }
+
+       /* Estilo de la imagen pequeña dentro del contenedor */
+        .small-image {
+            position: absolute; /* Coloca la imagen pequeña de manera absoluta dentro del contenedor */
+            top: 26PX; /* Coloca la imagen en la parte superior */
+            left: 0; /* Coloca la imagen en la parte izquierda */
+            width: 40px; /* Tamaño de la imagen pequeña */
+            height: 40px; /* Asegura que la imagen pequeña tenga la misma altura y anchura */
+            border-radius: 50%; /* Hace que la imagen pequeña sea redonda */
+            border: 1px solid white; /* Bordes blancos alrededor de la imagen pequeña */
+            object-fit: cover; /* Asegura que la imagen pequeña se recorte bien si tiene una relación de aspecto diferente */
+            z-index: 10; /* Asegura que la imagen esté por encima de otros elementos */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Agrega una sombra sutil para un efecto de profundidad */
+            margin-left: 127px; /* Ajusta el espacio con respecto a la otra imagen si es necesario */
+        }
+
+        /* Título del perfil */
+        .profile-name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #0a691a;
+        }
+
+        .profile-title {
+            margin-top: 10px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #0a691a;
+            text-align: justify; /* Justifica el texto */  
+        }
+
+
+        /* Descripción del perfil */
+        .profile-description {
+            font-size: 14px;
+            color: #0a691a;
+            margin-top: 10px;
+            line-height: 1.2;
+            text-align: justify; /* Justifica el texto */
+        }
+
+        /* Información adicional */
+        .accreditations {
+            margin-top: 4px;
+            font-size: 15px;
+            line-height: 1.8;
+            color: #0a691a;
+            text-align: justify; /* Justifica el texto */
+         
+        }
+
+        /* Estilo para la clase additional-info */
+        .additional-info {
+            margin-top: 20px;
+            font-size: 14px;   /* Cambiar el tamaño de la fuente */
+            color: #0d7c1f;    /* Cambiar el color del texto */
+            text-align: justify; /* Justifica el texto */
+            line-height: 1.2;
+        }
+
+
+        /* Enlaces de contacto */
+        .contact-buttons {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            gap: 15px;
+        }
+
+        /* Estilo de los botones de contacto */
+    
+        .contact-button {
+            background-color: transparent; /* Botón transparente */
+            color: #0b5f19; /* Color de texto verde */
+            padding: 12px 20px;
+            border: 2px solid #0b5f19; /* Borde verde para resaltar el botón */
+            border-radius: 20px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 14px; /* Tamaño de letra más pequeño */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 90%;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidad */
+            text-decoration: none; /* Elimina el subrayado */
+        }
+
+        .contact-button:hover {
+            background-color: #0b5f19; /* Fondo verde cuando pasa el cursor */
+            color: white; /* Cambia el color del texto a blanco al hacer hover */
+            border-color: #0b5f19; /* Cambia el borde a un verde más claro */
+        }
+
+        .contact-button i {
+            margin-right: 10px;
+        }
+        /* Estilo de la música y demás enlaces */
+
+        .music-player {
+            background-color: #f0f4f7; /* Fondo suave */
+            padding: 25px; /* Relleno alrededor del iframe */
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+            width: 100%; /* Ancho total del contenedor */
+            max-width: 490px; /* Ancho máximo */
+            margin: 20px auto; /* Centra el contenedor y agrega margen superior */
+            display: flex; /* Utiliza Flexbox */
+            justify-content: center; /* Centra el iframe horizontalmente */
+            align-items: center; /* Centra el iframe verticalmente */
+        }
+
+        /* Estilo del iframe (reproductor de Spotify) */
+        .music-player iframe {
+            border-radius: 8px; /* Bordes redondeados para el iframe */
+            width: 100%; /* El iframe ocupa el 100% del contenedor */
+            height: 80px; /* Altura fija para el reproductor */
+            border: none; /* Elimina el borde del iframe */
+        }
+
+        /* Detalles de sección de "Añadir a contactos" */
+        .add-to-contacts {
+            position: fixed; /* Hace que el botón permanezca fijo al hacer scroll */
+            bottom: 20px; /* Coloca el botón a 20px desde el borde inferior */
+            left: 50%; /* Coloca el botón en el centro horizontal */
+            transform: translateX(-50%); /* Ajusta el botón para que esté perfectamente centrado horizontalmente */
+            padding: 15px 25px; /* Mayor padding para hacerlo más visible */
+            background-color: #0b5f19;
+            color: white;
+            border-radius: 30px; /* Bordes redondeados más suaves */
+            text-align: center;
+            cursor: pointer;
+            font-size: 14px; /* Tamaño de fuente un poco mayor */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil para darle profundidad */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave en hover */
+            z-index: 1000; /* Asegura que el botón se vea por encima de otros elementos */
+        }
+
+        .add-to-contacts:hover {
+        transform: scale(1.1) translateX(-50%); /* Efecto de escala al pasar el cursor y mantiene el centro */
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Sombra más intensa al hacer hover */
+        }
+
+        /* Link personalizado */
+        .link-custom {
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            padding: 10px;
+            background-color: #2975AD;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Asegura que los íconos estén centrados verticalmente */
+            gap: 20px; /* Reduce ligeramente el espacio entre los íconos */
+            padding: 15px; /* Aumenta el padding para dar más espacio alrededor */
+            background-color: #f7f7f7; /* Fondo suave detrás de los íconos */
+            border-radius: 0px; /* Bordes redondeados para un aspecto más suave */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidad */
+        }
+
+        .social-icon {
+            width: 30px; /* Aumento del tamaño para mayor visibilidad */
+            height: 30px;
+            cursor: pointer;
+            transition: transform 0.3s ease, opacity 0.3s ease; /* Agrega transición de opacidad */
+            opacity: 0.8; /* Hace que los íconos sean ligeramente translúcidos */
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1);
+            opacity: 1; /* Aumenta la opacidad cuando se hace hover */
+        }
+
+        /* Agregar un efecto de focus para accesibilidad */
+        .social-icon:focus {
+            outline: 2px solid #007bff; /* Resalta los íconos cuando están en foco */
+            outline-offset: 2px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center; /* Centra los elementos horizontalmente */
+            align-items: flex-start; /* Alinea los elementos al final (parte inferior) */
+            height: 10vh; /* Altura del contenedor en la parte inferior de la ventana */
+            padding: 0 20px; /* Agrega un poco de espacio a los lados para evitar que el contenido quede pegado */
+        }
+
+        .footer {
+            text-align: center; /* Centra el texto dentro del footer */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centra la imagen y el texto verticalmente */
+        }
+
+        .logo {
+            width: 30px; /* Tamaño pequeño de la imagen */
+            height: auto;
+            margin-bottom: 2px; /* Espacio entre la imagen y el texto */
+        }
+
+        .footer h1 {
+            font-size: 8px; /* Aumenté el tamaño para mejorar la legibilidad */
+            color: #0b5f19;
+            margin: 0;
+            font-weight: bold;
+            line-height: 1.2; /* Asegura un buen espaciado en caso de texto largo */
+            text-transform: uppercase; /* Da un estilo más formal al texto */
+        }
+
+        /* Responsivo para teléfonos */
+    @media (max-width: 768px) {
+        .profile-container {
+            width: 95%;
+        }
+
+        .profile-name {
+            font-size: 18px;
+        }
+
+        .profile-title,
+        .profile-description,
+        .accreditations,
+        .additional-info {
+            font-size: 12px;
+        }
+
+        .contact-button {
+            font-size: 12px;
+            width: 100%;
+        }
+
+        .add-to-contacts {
+            padding: 12px 20px;
+            font-size: 12px;
+        }
+
+        .footer h1 {
+            font-size: 10px;
+        }
+    }  
+    </style>
+</head>
+<body>
+
+    <div class="profile-container">
+        <!-- Imagen de fondo -->
+        <img src="FONDO/F1.jpg" alt="Imagen de fondo" class="cover-image">
+
+        <div class="profile-info">
+            <!-- Foto de perfil -->
+            <img src="FOTOPRESENTACION/FOTOMAX.JPG" alt="Foto de perfil" class="profile-image">
+            <a href="https://www.tiktok.com/@ecoframemax?ug_source=op.auth&ug_term=Linkfly&utm_source=aw1z0jppohb9egj2&utm_campaign=tt4d_profile_link&_r=1">
+                <img src="ICONOS/ECFM.png" alt="Imagen pequeña" class="small-image">
+              </a>
+            <!-- Nombre y pronombres -->
+            <div class="profile-name">MAX MENDOZA <span class="profile-title">(Lonely)</span></div>
+
+            <!-- Empresa y título -->
+            <div class="accreditations">
+                ECOFRAMEMAX<br>
+                <span class="additional-info">Ing. Ambiental   | CIP: 349053    | CIA: 373372032</span>
+            </div>
+
+            <!-- Descripción del perfil -->
+            <div class="profile-description">
+                Ingeniero Ambiental con sólida formación en seguridad, salud ocupacional y 
+                medio ambiente (SSOMA), así como experiencia en la gestión de residuos sólidos (RSU). 
+                Me destaco por ser una persona disciplinada, con un alto compromiso en el cumplimiento 
+                de objetivos y metas.
+            </div>
+
+            <!-- Reproductor de música -->
+            <div class="music-player">
+                <iframe src="https://open.spotify.com/embed/track/5Q7zuH8VNu7aLappSusPu6?utm_source=generator" 
+                        width="300" 
+                        height="80" 
+                        frameborder="0" 
+                        allowfullscreen="" 
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+                </iframe>
+            </div>
+
+            <!-- Botones de contacto -->
+            <div class="contact-buttons">
+                <a href="tel:951580740" class="contact-button">
+                    <img src="ICONOS/telefono.png" alt="Llamar" style="width: 24px; height: 24px; margin-right: 10px;">
+                    LLAMAR
+                </a>
+
+                <a href="mailto:m.t_16_12@hotmail.com" class="contact-button">
+                    <img src="ICONOS/email.png" alt="Enviar correo" style="width: 24px; height: 24px; margin-right: 10px;">
+                    ENVIAR CORREO
+                </a>
+
+                <a href="https://www.tu-tienda-online.com" target="_blank" class="contact-button">
+                    <img src="ICONOS/tienda.png" alt="Tienda Online" style="width: 24px; height: 24px; margin-right: 10px;">
+                    TIENDA ONLINE
+                </a>
+
+                <a href="https://www.tu-tienda-online.com" target="_blank" class="contact-button">
+                    <img src="ICONOS/pet.png" alt="Tienda Online" style="width: 24px; height: 24px; margin-right: 10px;">
+                    PET CARD WORLD
+                </a>
+            </div>
+
+
+            <!-- Iconos sociales -->
+            <div class="social-links">
+                <a href="https://www.ejemplo1.com" target="_blank" aria-label="Facebook">
+                    <img src="ICONOS/facebook.png" alt="Facebook" class="social-icon">
+                </a>
+                <a href="https://www.ejemplo2.com" target="_blank" aria-label="Instagram">
+                    <img src="ICONOS/instagram.png" alt="Instagram" class="social-icon">
+                </a>
+                <a href="https://www.ejemplo3.com" target="_blank" aria-label="LinkedIn">
+                    <img src="ICONOS/linkedin.png" alt="LinkedIn" class="social-icon">
+                </a>
+                <a href="https://www.ejemplo4.com" target="_blank" aria-label="WhatsApp">
+                    <img src="ICONOS/whatsapp.png" alt="WhatsApp" class="social-icon">
+                </a>
+            </div>
+
+            <div class="container">
+                <!-- Sección con imagen y nombre del colegio, centrado en la parte inferior -->
+                <div class="footer">
+                    <img src="ICONOS/colegioia.png" alt="Logo Colegio" class="logo">
+                    <h1>Colegio de Ingenieros Ambientales</h1>
+                </div>
+            </div>
+
+            <!-- Añadir a contactos -->
+            <div class="add-to-contacts">
+                <span>Añadir a Contactos</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
