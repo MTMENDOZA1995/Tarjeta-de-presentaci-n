@@ -11,6 +11,8 @@
     <style>
         /* Diseño General */
         body {
+            overflow-x: hidden; /* Evita el desplazamiento horizontal */
+            width: 100%;
             font-family: 'Playfair Display', serif;
             background-color: #f4f7fc;
             margin: 0;
@@ -25,12 +27,13 @@
         .profile-container {
             background: rgba(0, 0, 0, 0);
             border-radius: 15px;
-            max-width: 800px;
+            max-width: 600px;
             width: 100%;
             overflow: auto;
-            margin: 20px;
+            margin: 0px;
             padding: 20px; /* Espacio interno para evitar que el contenido quede pegado a los bordes */
             position: relative; /* Permite el posicionamiento absoluto de elementos internos */
+            box-sizing: border-box;
            
         }
 
@@ -256,7 +259,7 @@
             display: flex;
             justify-content: center; /* Centra los elementos horizontalmente */
             align-items: flex-start; /* Alinea los elementos al final (parte inferior) */
-            height: 10vh; /* Altura del contenedor en la parte inferior de la ventana */
+            height: 14vh; /* Altura del contenedor en la parte inferior de la ventana */
             padding: 0 20px; /* Agrega un poco de espacio a los lados para evitar que el contenido quede pegado */
         }
 
@@ -286,6 +289,11 @@
     @media (max-width: 768px) {
         .profile-container {
             width: 100%;
+            margin: 0;
+            padding: 15px;
+        }
+        .cover-image {
+        width: 100vw; /* Hace que la imagen de portada cubra toda la pantalla */
         }
 
         .profile-name {
