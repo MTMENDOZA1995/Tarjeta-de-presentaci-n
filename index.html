@@ -10,6 +10,8 @@
 
     <style>
          /* Diseño General */
+
+        /* Diseño General */
         body {
             overflow-x: hidden; /* Evita el desplazamiento horizontal */
             width: 100%;
@@ -180,7 +182,9 @@
             border-radius: 10px; /* Bordes redondeados */
             width: 100%; /* Ancho total del contenedor */
             max-width: 500px; /* Ancho máximo */
+            margin: 0 auto; /* Centra el contenedor en la pantalla */
             display: flex; /* Utiliza Flexbox */
+            justify-content: center; /* Centra el iframe dentro del contenedor */
         }
 
         /* Estilo del iframe (reproductor de Spotify) */
@@ -296,10 +300,9 @@
             font-size: 12px;
             width: 100%;
         }
-        .music-player iframe {
-        height: 70px; /* Ajusta la altura del reproductor de música en pantallas pequeñas */
-        justify-content: center; /* Centra el iframe horizontalmente */
-        align-items: center; /* Centra el iframe verticalmente */
+        .music-player {
+        max-width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible en pantallas pequeñas */
+        padding: 15px; /* Reduce el padding en pantallas pequeñas */
         }
 
         .add-to-contacts {
@@ -310,7 +313,8 @@
         .footer h1 {
             font-size: 10px;
         }
-    } 
+    }
+    
     </style>
 </head>
 <body>
@@ -347,7 +351,8 @@
                 <iframe src="https://open.spotify.com/embed/track/5Q7zuH8VNu7aLappSusPu6?utm_source=generator" 
                         width="300" 
                         height="80" 
-                        frameborder="0" 
+                        frameborder="0"
+                        allowfullscreen="" 
                         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
                 </iframe>
             </div>
