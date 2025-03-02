@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Diseño General */
+         /* Diseño General */
         body {
             overflow-x: hidden; /* Evita el desplazamiento horizontal */
             width: 100%;
@@ -20,6 +20,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            min-width: 320px; /* Asegura que la página no se encoja más allá de un tamaño mínimo */
           
         }
 
@@ -33,7 +34,7 @@
             margin: 0px;
             padding: 0px; /* Espacio interno para evitar que el contenido quede pegado a los bordes */
             position: relative; /* Permite el posicionamiento absoluto de elementos internos */
-        
+            
            
         }
 
@@ -41,7 +42,6 @@
         .cover-image {
             width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
             height: 250px; /* Define la altura de la imagen de fondo */
-            background-image: url('ruta/a/tu/imagen.jpg'); /* Define la ruta de la imagen */
             background-position: center; /* Centra la imagen dentro del contenedor */
             background-size: cover; /* Asegura que la imagen cubra completamente el contenedor */
             background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -57,6 +57,10 @@
             padding: 15px;
             text-align: inherit;
             position: relative; /* Permite que los elementos con posición absoluta se ubiquen dentro de este contenedor */
+            box-sizing: border-box;
+            border: 2px solid #0a691a; /* Borde verde de 2px */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+            border-radius: 10px; /* Bordes redondeados */
         }
 
         /* Foto de perfil */
@@ -175,7 +179,8 @@
             padding: 25px; /* Relleno alrededor del iframe */
             border-radius: 10px; /* Bordes redondeados */
             width: 100%; /* Ancho total del contenedor */
-            max-width: 490px; /* Ancho máximo */
+            max-width: 500px; /* Ancho máximo */
+            margin: 20px auto; /* Centra el contenedor y agrega margen superior */
             display: flex; /* Utiliza Flexbox */
             justify-content: center; /* Centra el iframe horizontalmente */
             align-items: center; /* Centra el iframe verticalmente */
@@ -212,26 +217,14 @@
         box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Sombra más intensa al hacer hover */
         }
 
-        /* Link personalizado */
-        .link-custom {
-            text-decoration: none;
-            color: white;
-            font-size: 14px;
-            padding: 10px;
-            background-color: #2975AD;
-            border-radius: 5px;
-            display: inline-block;
-        }
-
+    
         .social-links {
             display: flex;
             justify-content: center;
             align-items: center; /* Asegura que los íconos estén centrados verticalmente */
             gap: 20px; /* Reduce ligeramente el espacio entre los íconos */
             padding: 15px; /* Aumenta el padding para dar más espacio alrededor */
-            background-color: #f7f7f7; /* Fondo suave detrás de los íconos */
             border-radius: 0px; /* Bordes redondeados para un aspecto más suave */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidad */
         }
 
         .social-icon {
@@ -249,7 +242,7 @@
 
         /* Agregar un efecto de focus para accesibilidad */
         .social-icon:focus {
-            outline: 2px solid #007bff; /* Resalta los íconos cuando están en foco */
+            outline: 2px solid #090909; /* Resalta los íconos cuando están en foco */
             outline-offset: 2px;
         }
 
@@ -286,12 +279,9 @@
         /* Responsivo para teléfonos */
     @media (max-width: 768px) {
         .profile-container {
-            width: 100%;
+            width: 100vw;
             margin: 0;
-            padding: 15px;
-        }
-        .cover-image {
-        width: 100vw; /* Hace que la imagen de portada cubra toda la pantalla */
+            padding: 5px,
         }
 
         .profile-name {
@@ -309,6 +299,9 @@
             font-size: 12px;
             width: 100%;
         }
+        .music-player iframe {
+        height: 70px; /* Ajusta la altura del reproductor de música en pantallas pequeñas */
+        }
 
         .add-to-contacts {
             padding: 12px 20px;
@@ -318,7 +311,7 @@
         .footer h1 {
             font-size: 10px;
         }
-    }  
+    } 
     </style>
 </head>
 <body>
