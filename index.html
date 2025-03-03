@@ -401,15 +401,33 @@
             </div>
 
             <!-- Añadir a contactos -->
-            <a href="data:text/vcard;base64,BEGIN:VCARD%0AVERSION:3.0%0AN:Max Mendoza%0AFN:Max Mendoza%0AORG:ECOFRAMEMAX%0ATEL:1234567890%0AEMAIL:m.t_16_12@hotmail.com%0AEND:VCARD" 
-            id="add-contact-vcard" 
-            download="contacto-max.vcf" 
-            class="add-to-contacts" 
-            aria-label="Añadir a Contactos">
-             Añadir a Contactos
-            </a>
+            <div class="add-to-contacts" onclick="addToContacts()">
+                <span>Añadir a Contactos</span>
+            </div>
         </div>
     </div>
+    <script>
+        // Función para generar y descargar el archivo VCF (vCard)
+        function downloadVCard() {
+            const vCardData = `BEGIN:VCARD
+VERSION:3.0
+FN:MAX MENDOZA
+TEL:978536345
+EMAIL:m.t_16_12@hotmail.com
+END:VCARD`;
+
+            // Crear un Blob con el contenido VCF
+            const blob = new Blob([vCardData], { type: 'text/vcard' });
+
+            // Crear un enlace de descarga
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'MAX_MENDOZA.vcf'; // Nombre del archivo a descargar
+
+            // Simular un clic en el enlace para iniciar la descarga
+            link.click();
+        }
+    </script>
 
 </body>
 </html>
